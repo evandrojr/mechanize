@@ -1,0 +1,6 @@
+<h2>Edit tarefa</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: tarefa_path(@conn, :update, @tarefa) %>
+
+<%= link "Back", to: tarefa_path(@conn, :index) %>

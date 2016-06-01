@@ -1,0 +1,28 @@
+<h2>Listing tarefas</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tarefa <- @tarefas do %>
+    <tr>
+      <td><%= tarefa.titulo %></td>
+      <td><%= tarefa.url %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: tarefa_path(@conn, :show, tarefa), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: tarefa_path(@conn, :edit, tarefa), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: tarefa_path(@conn, :delete, tarefa), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New tarefa", to: tarefa_path(@conn, :new) %>

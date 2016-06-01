@@ -1,0 +1,18 @@
+<h2>Show tarefa</h2>
+
+<ul>
+
+  <li>
+    <strong>Titulo:</strong>
+    <%= @tarefa.titulo %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @tarefa.url %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: tarefa_path(@conn, :edit, @tarefa) %>
+<%= link "Back", to: tarefa_path(@conn, :index) %>
