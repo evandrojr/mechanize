@@ -22,7 +22,8 @@ defmodule Mechanize.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Mechanize do
-  #   pipe_through :api
-  # end
+  scope "/api", Mechanize do
+    pipe_through :api
+    resources "/tarefas", TarefaApiController
+  end
 end
